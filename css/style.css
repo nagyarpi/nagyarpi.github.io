@@ -1,16 +1,89 @@
+html {
+	font-size: 62.5%;
+}
+
 body{
  background-color: white;
+ color: #362f2d;
+ font: 1.5em/1.5 "Open Sans", arial, sans-serif;
+
 }
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+.wrapper {}
 
 .header {
+
+}
+
+
+.logo {
 	background-color: #f26d7d;
+	margin: 0 auto;
+}
+
+.logo a {
+	background: url(../images/logo.png);
+	display: block;
 	height: 50px;
-
+	margin: 0 auto;
+	text-indent: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 250px;
 }
 
-.columns {
-
+.phone {
+	border: 1px solid red;
+	border-radius: 10px;
+	font-size: .9em;
+	height: 43px;
+	line-height: 43px;
+	min-height: 30px;
+	/*dev*/margin: 15px 20px;
+	text-align: center;
 }
+
+.phone a {
+	color: #007236;
+	font-size: 1.4em;
+	text-decoration: none;
+}
+
+.menu {
+	/*dev*/background: red;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+}
+
+.facebook {
+	display: none;
+}
+
+.columns {}
 
 .content {
 	/*dev*/background: rgba(255, 0, 0, .1);
@@ -18,7 +91,7 @@ body{
 }
 
 .sidebar {
-	/*dev*/background: rgba(255, 0, 0, .1);
+	/*dev*/background: rgba(125, 0, 0, .1);
 	/*dev*/min-height: 200px;
 }
 
@@ -27,6 +100,91 @@ body{
 	height: 85px;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 978px) {
+	body {
+		background: #fcfbf8;
+	}
 
+
+	.wrapper {
+		margin: 0 auto;
+		width: 978px;
+	}
+
+	.header {
+		background: none;
+		padding-bottom: 25px;
+	}
+
+	.logo {
+		float: left;
+		background: none;
+		margin: 20px 0 30px;
+	}
+
+	.logo a {
+		background: url(../images/logo2.png);
+		height: 77px;
+		width: 478px;
+	}
+
+	.phone {
+		float: right;
+		margin: 30px 0 0;
+		width: 175px;
+		height: auto;
+		padding: 5px 0;
+		line-height: 1.5;
+	}
+
+	.phone a {
+		font-size: 1.5em;
+		font-style: italic;
+		white-space: nowrap;
+
+	}
+
+	.menu {
+		clear: both;
+		float: left;
+		height: 40px;
+		/* dev */ min-width: 200px;
+		position: static;
+		width: auto;
+	}
+
+	.facebook {
+		/* dev */background-color: blue;
+		display: block;
+		height: 40px;
+		float: right;
+		margin: 0;
+		/* dev */min-width: 100px;
+	}
+
+
+	.columns {
+		background-color: #fff;
+		padding: 30px;
+	}
+
+	.columns:after {
+		
+	}
+
+	.content {
+		float: left;
+		width: 602px;
+		}
+
+	.sidebar {
+		float: right;
+		width: 286px;
+	}
+
+	.footer {
+		background: none;
+		height: 55px;
+		margin: 30px 0;
+	}
 }
