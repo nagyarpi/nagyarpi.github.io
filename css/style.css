@@ -9,7 +9,6 @@ body{
 
 }
 
-
 .clearfix:before,
 .clearfix:after {
     content: " "; 
@@ -28,14 +27,13 @@ body{
     *zoom: 1;
 }
 
-
-
 .wrapper {}
 
-.header {
+.header {}
 
+#nav:target .header {
+	background-color: #f26d7d;	
 }
-
 
 .logo {
 	background-color: #f26d7d;
@@ -51,9 +49,12 @@ body{
 	overflow: hidden;
 	white-space: nowrap;
 	width: 250px;
+	position: relative;
+	z-index: 100;
 }
 
 .phone {
+	background: white;
 	border: 1px solid red;
 	border-radius: 10px;
 	font-size: .9em;
@@ -68,15 +69,53 @@ body{
 	color: #007236;
 	font-size: 1.4em;
 	text-decoration: none;
+	position: relative;
+	z-index: 100;
 }
 
 .menu {
-	/*dev*/background: red;
 	position: absolute;
-	right: 0;
 	top: 0;
-	width: 50px;
+	width: 100%;
+}
+
+.menu .toggle {
+	background: yellow;
 	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#nav:target .menu ul {
+	display: block;
+}
+
+.menu .close {
+	display: none;
+}
+
+#nav:target .menu .close {
+	display: block;
+}
+
+.menu ul {
+	display: none;
+	padding: 0;
+	margin: 125px 0 0 0;
+}
+
+.menu li {
+	background: #f26d7d;
+	list-style: none;
+}
+
+.menu a {
+	display: block;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
 }
 
 .facebook {
@@ -116,6 +155,10 @@ body{
 		padding-bottom: 25px;
 	}
 
+	#nav:target .header {
+		background-color: transparent;	
+	}
+
 	.logo {
 		float: left;
 		background: none;
@@ -152,6 +195,23 @@ body{
 		position: static;
 		width: auto;
 	}
+
+	.menu .toggle {
+		display: none;
+	}
+
+	.menu ul {
+		display: block;
+		margin: 0;
+	}
+
+	.menu li {
+		float: right;
+	}
+
+	#nav:target .menu .close {
+	display: none;
+}
 
 	.facebook {
 		/* dev */background-color: blue;
